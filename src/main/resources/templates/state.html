@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>State changer</title>
+</head>
+<body>
+
+<h1>This is your first JS exercise </h1>
+
+<label></label>
+
+<input type="text" id="textField" />
+<br>
+<h2 id="thankYou"></h2>
+<button onclick="clickFunction()" id="button" value="Click me">Click me</button>
+
+
+<script>
+
+    function clickFunction() {
+
+        let textField =  document.getElementById("textField").value;
+        let thankYou = document.getElementById("thankYou").innerHTML;
+        let button = document.getElementById("button").innerHTML;
+
+        document.getElementById("textField").value = "Change me";
+        document.getElementById("button").innerHTML = "Change text above and click me again!";
+
+        if (button === "Click me again!" ) {
+
+            document.getElementById("textField").value = "Change me";
+            document.getElementById("button").innerHTML = "Change text above and click me again!";
+            document.getElementById("thankYou").innerHTML = "";
+
+        }else if (textField !== "Change me" && textField !== ""){
+            document.getElementById("textField").value = textField;
+            document.getElementById("button").innerHTML = "Click me again!";
+            document.getElementById("thankYou").innerHTML = "Thank you for changing the input to: " + textField;
+        }
+
+
+
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

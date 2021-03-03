@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI calculator</title>
+</head>
+<body>
+
+<h1>BMI Calculator</h1>
+
+
+<div id="calculator">
+
+<form onsubmit="formSubmit()">
+
+<div id="weight">
+    <h2> Weight (kg)</h2>
+    <input id="weightInput" type="number">
+
+</div>
+    <div id="height">
+        <h2> Height (cm)</h2>
+        <input id="heightInput" type="number">
+    </div>
+    <input type="submit" value="Calculate BMI" onclick="return formSubmit();"/>
+
+    <p id="BMIresult"></p>
+</form>
+
+
+</div>
+
+
+
+<script>
+
+
+
+    function formSubmit() {
+
+        let weight=document.getElementById("weightInput").value;
+
+        let height=document.getElementById("heightInput").value/100;
+
+        let result;
+
+        result = weight/(height*height);
+        result = result.toFixed(2);
+       if (result<=18.5){
+           document.getElementById("BMIresult").innerHTML = result + " " + "underweight";
+           return false;
+       } if(result>18.5 && result<=25){
+           document.getElementById("BMIresult").innerHTML = result + " " + "normal weight";
+           return false;
+       }if(result>25 && result<=30){
+            document.getElementById("BMIresult").innerHTML = result + " " + "slighty overweight";
+            return false;
+        }if(result>30 && result<=35){
+            document.getElementById("BMIresult").innerHTML = result + " " + "overweight class 1";
+            return false;
+        }if(result>35 && result<=40){
+            document.getElementById("BMIresult").innerHTML = result + " " + "overweight class 2";
+            return false;
+        }if(result>40) {
+            document.getElementById("BMIresult").innerHTML = result + " " + "overweight class 3";
+            return false;
+        }
+
+    }
+
+
+
+</script>
+
+</body>
+</html>

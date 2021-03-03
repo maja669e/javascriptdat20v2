@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <h1>JavaScript Demo</h1>
+        <input id="input" type="text"/>
+        <div id="textsektion">
+            Min fine tekst!
+        </div>
+
+        <button id="mitBilledeKnap" onclick="btnClick()">Don't press this Button!</button>
+
+        <form onsubmit="formSubmit()">
+            <input id="txtForm" type="text"/>
+            <input type="submit" value="Tryk her!"/>
+        </form>
+    </div>
+
+    <script>
+        function btnClick(){
+            let textSektion = document.getElementById("textsektion");
+            if (textSektion.hidden == true){
+                textSektion.hidden = false;
+            }
+            else{
+                textSektion.hidden=true;
+            }
+
+            alert(document.getElementById("textsektion").innerText);
+
+        }
+
+        function formSubmit(){
+            let txt = document.getElementById("txtForm").value;
+            alert(txt);
+            //document.getElementById("textsektion").innerText = txt; //dur ikke - siden reloader onsubmit
+        }
+    </script>
+</body>
+</html>

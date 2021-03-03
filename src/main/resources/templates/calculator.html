@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<h1>Javascript Calculator</h1>
+
+<output id="extraResult"></output>
+<output id="result"></output>
+
+<br>
+
+<button id="divide" value="/" onclick="addToOutPut(this.value)">/</button>
+<button id="multiply" value="*" onclick="addToOutPut(this.value)">X</button>
+<button id="delete" onclick="restart()">DEL</button>
+<br>
+<button id="7" value="7" onclick="addToOutPut(this.value)">7</button>
+<button id="8" value="8"  onclick="addToOutPut(this.value)">8</button>
+<button id="9" value="9" onclick="addToOutPut(this.value)">9</button>
+<button id="minus" value="-" onclick="addToOutPut(this.value)">-</button>
+<br>
+<button id="4" value="4" onclick="addToOutPut(this.value)">4</button>
+<button id="5" value="5" onclick="addToOutPut(this.value)">5</button>
+<button id="6" value="6" onclick="addToOutPut(this.value)">6</button>
+<button id="add" value="+" onclick="addToOutPut(this.value)">+</button>
+<br>
+<button id="1" value="1" onclick="addToOutPut(this.value)">1</button>
+<button id="2" value="2" onclick="addToOutPut(this.value)">2</button>
+<button id="3" value="3" onclick="addToOutPut(this.value)">3</button>
+<br>
+<button id="0" value="0" onclick="addToOutPut(this.value)">0</button>
+<button id="desmorpoint" value="." onclick="addToOutPut(this.value)">.</button>
+<button id="equal" onclick="equal()">=</button>
+
+
+
+
+<script>
+
+    let outputValue;
+
+    function addToOutPut(clickValue) {
+
+       document.getElementById("result").innerHTML += clickValue;
+        outputValue = document.getElementById("result").innerHTML;
+    }
+
+    function equal() {
+        document.getElementById("result").innerHTML = eval(outputValue);
+
+
+    }
+
+    function restart() {
+        document.getElementById("result").innerHTML = "";
+
+    }
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
